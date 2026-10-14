@@ -59,7 +59,7 @@ We are excited to celebrate our journey together with you in December 2027 at Vi
   ]},
   bridalParty: {enabled:false,title:"Our Bridal Party",people:[]},
   registry: {enabled:false,title:"Gift Registry",message:"Your presence is our greatest gift.",links:[]},
-  rsvp: {enabled:true,title:"Kindly RSVP",deadline:"RSVP details to follow",message:"We can't wait to celebrate with you! Our RSVP form will be available once the invitations are sent.",googleFormUrl:""},
+  rsvp: {enabled:true,title:"Kindly RSVP",deadline:"RSVP details to follow",message:"We can't wait to celebrate with you! Our RSVP form will be available once the invitations are sent.",googleFormUrl: "https://forms.gle/X9pFTSbGmxKWpPZU6"},
   faq: {enabled:true,title:"Good to Know",items:[
     {question:"When and where is the wedding?",answer:"Our celebrations will take place in December 2027 in Victoria Falls, Zimbabwe. The welcome gathering will be at Victoria Falls Safari Lodge, the ceremony at the Elephant Sanctuary and the reception at The Lookout Café. Exact dates and times will be confirmed."},
     {question:"What is the weather like in December?",answer:"December is warm and often humid, with occasional tropical rain showers. Bring breathable clothing, sunscreen, a hat and a light rain layer."},
