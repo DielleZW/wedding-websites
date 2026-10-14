@@ -19,5 +19,31 @@
  if(w.rsvp?.enabled){const r=w.rsvp;out+=`<section id="rsvp" class="section"><div class="rsvp-box"><div class="eyebrow">We hope you'll join us</div><h2>${esc(r.title)}</h2><p>${esc(r.message)}</p><p><strong>${esc(r.deadline)}</strong></p>${safeUrl(r.googleFormUrl)?`<a class="button" href="${esc(safeUrl(r.googleFormUrl))}" target="_blank" rel="noopener noreferrer">Respond via Google Forms ↗</a>`:'<span class="button disabled" aria-disabled="true">RSVP opening soon</span>'}</div></section>`}
  if(w.faq?.enabled)out+=`<section id="faq" class="wash"><div class="section">${heading('Your questions, answered',w.faq.title)}<div class="faq">${(w.faq.items||[]).map(q=>`<details><summary>${esc(q.question)}</summary><p>${esc(q.answer)}</p></details>`).join('')}</div><div class="faq-official"><p>For up-to-date entry requirements, always consult the official authorities.</p>${link('https://www.zimimmigration.gov.zw/','Zimbabwe Immigration')}${link('https://www.evisa.gov.zw/','Official eVisa Portal')}</div></div></section>`;
  app.innerHTML=out;
+  // Fix internal navigation so RSVP and all menu links land on the correct section
+ const scrollToSection = (hash) => {
+   const el = document.querySelector(hash);
+   if (!el) return;
+
+   const stickyNav = document.querySelector('.nav');
+   const offset = (stickyNav?.offsetHeight || 0) + 12;
+   const top = el.getBoundingClientRect().top + window.scrollY - offset;
+
+   window.scrollTo({
+     top: top,
+     behavior: 'smooth'
+   });
+ };
+
+ document.querySelectorAll('a[href^="#"]').forEach(a => {
+   a.addEventListener('click', e => {
+     const hash = a.getAttribute('href');
+
+     if (hash && hash !== '#' && document.querySelector(hash)) {
+       e.preventDefault();
+       e.stopPropagation();
+       scrollToSection(hash);
+     }
+   });
+ });
  const anchors=[...nav.querySelectorAll('a')];if('IntersectionObserver'in window){const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)anchors.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))})},{rootMargin:'-20% 0px -65% 0px'});sections.forEach(([id])=>{const el=document.getElementById(id);if(el)obs.observe(el)})}
 })();
