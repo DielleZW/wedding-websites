@@ -129,12 +129,12 @@ We are excited to celebrate our journey together with you in December 2027 at Vi
         heading: "Our Recommended Stay · Waterfalls Lodge",
 
         text:
-          "We've reserved a block of rooms at Waterfalls Lodge for our wedding guests at a rate of $190 per person. To book, please email reservations@wildhorizons.co.zw with your preferred check-in and check-out dates and use the wedding booking reference DG2027.",
+          "We've reserved a block of rooms at Waterfalls Lodge for our wedding guests at a rate of $185 per person. To book, please email travel@planmywedding.com with your preferred check-in and check-out dates and use the wedding booking reference DG2027.",
 
         linkLabel: "Explore Waterfalls Lodge",
         linkUrl: "https://wildhorizons.co.za/waterfalls-lodge/",
 
-        email: "reservations@wildhorizons.co.zw"
+        email: "travel@planmywedding.com"
       },
 
       {
