@@ -1,9 +1,16 @@
-SECRET GARDEN V6 - SIPHIWE & MELUSI
+SIPHIWE & MELUSI — SECRET GARDEN V7
+Upload ALL six files directly to:
+wedding-websites/save-the-dates/siphiwe-melusi/
+Replace previous files of the same names.
 
-Upload all six website files (index.html, style.css, script.js, closed-garden.webp, garden-background.webp, butterfly.svg) into save-the-dates/siphiwe-melusi on GitHub. Replace existing files with the same names.
+index.html
+style.css
+script.js
+closed-garden.webp
+garden-background.webp
+butterfly.svg
 
-The closed artwork is cropped from the newly generated garden visual to remove embedded text and buttons. The invitation and buttons are live HTML, not baked into images.
-
-Preview: https://ido.planmywedding.com/save-the-dates/siphiwe-melusi/index.html?v=6
-
-This is a prototype: the closed gates swing as two image halves, not isolated physical gate cutouts.
+The images have no baked-in invitation wording or buttons.
+The four coded buttons are independently clickable.
+Location, updates and story currently display honest placeholders pending destination URLs/content.
+Preview: https://ido.planmywedding.com/save-the-dates/siphiwe-melusi/index.html?v=7
