@@ -115,6 +115,7 @@ We are excited to celebrate our journey together with you in December 2027 at Vi
       "Make a holiday of it! We're delighted to welcome friends and family to Victoria Falls, Zimbabwe.",
 
     image: "couples/dhanishtha-gaurav/images/victoria-falls.webp",
+    panoramaImage: "couples/dhanishtha-gaurav/images/victoria-falls-bridge.webp",
 
     details: [
 
