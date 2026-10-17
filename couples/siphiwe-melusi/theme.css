@@ -1,0 +1,35 @@
+/* Siphiwe & Melusi — enchanted garden at Victoria Falls */
+:root{--paper:#fbf4ef;--ink:#354331;--rust:#a96c79;--saffron:#c29b5c;--olive:#687b61}
+body{background:var(--paper)}
+.topline{background:linear-gradient(90deg,#b8819d,#d5ad69,#a5a47b,#b8819d)}
+.invitation-hero{min-height:820px!important;background-position:center 42%!important;position:relative}
+.invitation-hero::before{background:linear-gradient(90deg,rgba(255,245,231,.32),rgba(255,245,231,.1),rgba(255,245,231,.32))!important}
+.invitation-hero .hero-copy{width:min(640px,90vw);min-height:570px;padding:48px 35px;background:radial-gradient(ellipse at center,rgba(255,249,236,.95) 0%,rgba(255,249,236,.89) 48%,rgba(255,249,236,.6) 70%,transparent 90%)}
+.invitation-hero h1{font-size:clamp(53px,7vw,105px);color:#344331;text-shadow:0 1px 8px #fff9}
+.hero-kicker,.eyebrow{letter-spacing:.18em;color:#906c67}
+.invitation-hero .script{color:#b08073}
+.hero-date,.hero-place{color:#45503b}
+.hero-note{color:#655b50}
+.button{background:#64765c!important;color:white!important;border-color:#64765c!important}
+.section-head h2{color:#3e503e}
+.motif{color:#bd9967}
+.wash{background:#f5e9e8}
+.card{border:1px solid #d9c7bb;background:#fffaf7;box-shadow:0 10px 32px #58402d0d}
+.card h3{color:#45533e}
+.card-links{display:flex;flex-direction:column;align-items:flex-start;gap:10px;margin-top:18px}
+.card-links a{color:#a26d7c;text-underline-offset:4px}
+.event-cards{grid-template-columns:repeat(3,minmax(0,1fr))}
+.event-cards .card{padding:27px}
+.event-cards h4{font-size:12px;letter-spacing:.06em;color:#a26d7c;margin:20px 0 10px}
+.event-time{font-style:italic;font-size:13px;margin:10px 0;color:#67795e}
+.attire-note{background:#fff9f4;padding:26px 32px;margin:0 0 30px;border-left:3px solid #b58caa}
+.attire-note strong{font-family:'Cormorant Garamond',serif;font-size:25px;font-weight:500}
+.attire-note p{margin:7px 0 0}
+.travel-feature{text-align:center;max-width:900px;margin:0 auto 40px}
+.travel-feature img{width:100%;max-height:460px;object-fit:cover;object-position:center 55%;border:8px solid #fffaf7}
+.travel-feature p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:27px;margin:22px auto;max-width:650px;color:#67745e}
+.travel-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+.rsvp-box{background:linear-gradient(135deg,#fff9f2,#f7e7ed)!important;border:1px solid #e4cad1}
+.faq-official{text-align:center;margin-top:40px}.faq-official a{display:inline-block;margin:8px 14px;color:#a26d7c}
+@media(max-width:900px){.event-cards,.travel-cards{grid-template-columns:1fr}}
+@media(max-width:600px){.invitation-hero{min-height:700px!important;background-position:center center!important}.invitation-hero .hero-copy{width:96vw;min-height:490px;padding:38px 16px;background:radial-gradient(ellipse at center,rgba(255,249,236,.97),rgba(255,249,236,.86) 65%,rgba(255,249,236,.18) 100%)}.invitation-hero h1{font-size:clamp(46px,11vw,67px)}.travel-feature img{max-height:380px}}
