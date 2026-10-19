@@ -4,7 +4,8 @@
 .invitation-hero::before{background:linear-gradient(90deg,rgba(247,239,225,.06),rgba(247,239,225,.08))!important}
 .invitation-hero .hero-copy{width:min(570px,78vw);background:radial-gradient(ellipse at center,#f8f0e5f5 0%,#f8f0e5e8 60%,#f8f0e5a8 78%,transparent 100%);min-height:620px}
 .invitation-hero h1{font-size:clamp(54px,7vw,100px)}
-.story-intro{display:grid;grid-template-columns: minmax(240px,.72fr) minmax(0,1.28fr);gap:48px;align-items:start}
+.hero-note{display:none!important}
+.story-intro{display:grid;grid-template-columns:minmax(240px,.9fr) minmax(0,1.1fr);gap:40px;align-items:start}
 .story-intro>img{width:100%;max-height:690px;object-fit:cover;position:sticky;top:100px}
 .story-body p{white-space:normal;margin:0 0 19px;line-height:1.88;font-size:14px}
 .story-body .script{margin:0 0 28px}
@@ -25,7 +26,33 @@
 .travel-feature p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:25px;margin:22px auto;max-width:650px}
 .travel-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
 .travel-panorama{margin-top:55px}.travel-panorama img{width:100%;max-height:360px;object-fit:cover}
-.gallery img{border:6px solid #f8f2e9;box-shadow:0 8px 24px #2b23151a;aspect-ratio:3/4;object-fit:cover}
+/* Mixed portrait and landscape gallery: preserve entire photograph */
+#gallery .gallery{display:block;columns:3 220px;column-gap:16px}
+#gallery .gallery img{display:block;width:100%;height:auto;aspect-ratio:auto!important;object-fit:contain!important;break-inside:avoid;margin:0 0 16px;border:5px solid #f8f2e9;box-shadow:0 8px 24px #2b23151a}
 .faq-official{text-align:center;margin-top:40px}.faq-official a{display:inline-block;margin:8px 14px;color:var(--rust)}
+.dg-profile-pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-self:start}
+.dg-profile-pair figure{margin:0;min-width:0}
+.dg-profile-pair img{width:100%;height:280px;object-fit:cover;border:5px solid #fff8ef;box-shadow:0 6px 20px #342b2418}
+.dg-profile-pair figcaption{font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;text-align:center;margin:12px 0;color:var(--olive)}
+.dg-placeholder-art{height:280px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:18px;background:linear-gradient(140deg,#f4e8d6,#d9d5c4);color:#85735b;font-size:35px;border:5px solid #fff8ef}
+.dg-placeholder-art span{font:12px 'DM Sans',sans-serif;letter-spacing:.08em;text-transform:uppercase;text-align:center;padding:0 10px}
+.dg-countdown{margin:18px auto 22px;max-width:430px;text-align:center;color:var(--ink)}
+.dg-countdown-title{font-size:10px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:12px}
+.dg-clock{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.dg-clock span{background:#f7eee2dd;border:1px solid #bd9e725e;padding:8px 3px;display:flex;flex-direction:column;align-items:center}
+.dg-clock b{font:500 clamp(19px,3vw,29px) 'Cormorant Garamond',serif;line-height:1}
+.dg-clock small{font-size:9px;text-transform:uppercase;letter-spacing:.08em;margin-top:5px}
+.dg-hashtag,.dg-footer-hashtag{font-size:12px;letter-spacing:.07em;color:var(--rust);margin-top:13px}
+.dg-footer-hashtag{color:inherit;margin:10px auto}
+/* Simple invitation gate; a client-side privacy screen, not server security. */
+#dg-gate{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;background:linear-gradient(140deg,#e9ddc9,#f7eee4 45%,#e8e1d2);padding:20px}
+#dg-gate[hidden]{display:none!important}
+.dg-gate-card{width:min(440px,100%);background:#fffaf3;border:1px solid #d9c8ae;box-shadow:0 22px 75px #3a302326;padding:48px 30px;text-align:center}
+.dg-gate-kicker{font-size:11px;letter-spacing:.2em;color:var(--rust);text-transform:uppercase}
+.dg-gate-card h1{font:500 clamp(40px,8vw,58px) 'Cormorant Garamond',serif;color:var(--ink);margin:12px 0}
+.dg-gate-card p{color:#685c4e;line-height:1.65;font-size:13px}
+.dg-gate-card input{display:block;width:100%;max-width:270px;margin:20px auto 12px;padding:14px;border:1px solid #bcae99;background:white;font-size:16px;text-align:center;letter-spacing:.1em}
+.dg-gate-card button{background:var(--olive);border:0;color:white;padding:13px 24px;cursor:pointer;font-size:12px;letter-spacing:.08em}
+#dg-gate-error{min-height:18px;color:#a3392f;margin-top:12px}
 @media(max-width:900px){.event-cards{grid-template-columns:1fr}.story-intro{grid-template-columns:1fr}.story-intro>img{position:static;max-height:560px;object-fit:contain;background:#eee2d3}.travel-cards{grid-template-columns:1fr}}
-@media(max-width:600px){.invitation-hero{min-height:650px!important;background-position:47% center!important}.invitation-hero .hero-copy{width:96vw;padding:45px 18px;min-height:500px;background:radial-gradient(ellipse at center,#f8f0e5fc 0%,#f8f0e5f2 65%,#f8f0e5c9 84%,#f8f0e585 100%)}.invitation-hero h1{font-size:clamp(45px,12vw,66px)}.love-notes{grid-template-columns:1fr}.gallery{gap:7px}.gallery img{border-width:3px}}
+@media(max-width:600px){.invitation-hero{min-height:650px!important;background-position:47% center!important}.invitation-hero .hero-copy{width:96vw;padding:45px 18px;min-height:500px;background:radial-gradient(ellipse at center,#f8f0e5fc 0%,#f8f0e5f2 65%,#f8f0e5c9 84%,#f8f0e585 100%)}.invitation-hero h1{font-size:clamp(45px,12vw,66px)}.love-notes{grid-template-columns:1fr}.dg-profile-pair img,.dg-placeholder-art{height:230px}#gallery .gallery{columns:2 140px;column-gap:8px}#gallery .gallery img{border-width:3px;margin-bottom:8px}.dg-gate-card{padding:38px 20px}}

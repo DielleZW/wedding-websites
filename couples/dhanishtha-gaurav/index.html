@@ -1,93 +1,68 @@
-
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <title>Dhanishtha &amp; Gaurav | December 2027</title>
-
-  <meta name="description"
-        content="Join Dhanishtha & Gaurav for their wedding celebrations in Victoria Falls, Zimbabwe · December 2027.">
-
+  <meta name="description" content="Join Dhanishtha & Gaurav for their wedding celebrations in Victoria Falls, Zimbabwe · December 2027.">
   <meta name="theme-color" content="#f6ecdc">
-
-  <!-- WhatsApp / Facebook / Social Preview -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Dhanishtha &amp; Gaurav">
-  <meta property="og:description"
-        content="December 2027 · Victoria Falls, Zimbabwe · We can't wait to celebrate with you.">
-
-  <meta property="og:url"
-        content="https://ido.planmywedding.com/couples/dhanishtha-gaurav/">
-
-  <meta property="og:image"
-        content="https://ido.planmywedding.com/couples/dhanishtha-gaurav/images/whatsapp-preview.png">
-
+  <meta property="og:description" content="December 2027 · Victoria Falls, Zimbabwe · We can't wait to celebrate with you.">
+  <meta property="og:url" content="https://ido.planmywedding.com/couples/dhanishtha-gaurav/">
+  <meta property="og:image" content="https://ido.planmywedding.com/couples/dhanishtha-gaurav/images/whatsapp-preview.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Dhanishtha &amp; Gaurav">
-  <meta name="twitter:description"
-        content="December 2027 · Victoria Falls, Zimbabwe · We can't wait to celebrate with you.">
-  <meta name="twitter:image"
-        content="https://ido.planmywedding.com/couples/dhanishtha-gaurav/images/whatsapp-preview.png">
-
-  <link rel="canonical"
-        href="https://ido.planmywedding.com/couples/dhanishtha-gaurav/">
-
-  <!-- Use the master website assets from the repository root -->
+  <meta name="twitter:description" content="December 2027 · Victoria Falls, Zimbabwe · We can't wait to celebrate with you.">
+  <meta name="twitter:image" content="https://ido.planmywedding.com/couples/dhanishtha-gaurav/images/whatsapp-preview.png">
+  <link rel="canonical" href="https://ido.planmywedding.com/couples/dhanishtha-gaurav/">
   <base href="/">
-
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&family=Great+Vibes&display=swap"
-        rel="stylesheet">
-
-  <!-- Shared wedding website styling -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-
-  <!-- This couple's unique styling -->
-  <link rel="stylesheet"
-        href="couples/dhanishtha-gaurav/theme.css">
-
-  <!-- This couple's wedding information -->
-  <script src="couples/dhanishtha-gaurav/config.js"></script>
-
-  <script>
-    window.PMW_CLIENT_SLUG = "dhanishtha-gaurav";
-  </script>
+  <link rel="stylesheet" href="couples/dhanishtha-gaurav/theme.css?v=20261019-1">
+  <script src="couples/dhanishtha-gaurav/config.js?v=20261019-1"></script>
+  <script src="couples/dhanishtha-gaurav/updates.js?v=20261019-1"></script>
+  <script>window.PMW_CLIENT_SLUG = 'dhanishtha-gaurav';</script>
 </head>
-
 <body>
-
-  <div class="topline"></div>
-
-  <nav class="nav" aria-label="Wedding navigation">
-    <div class="nav-inner">
-      <a class="brand" href="#home" id="brand">Our Wedding</a>
-      <div class="links" id="links"></div>
+  <div id="dg-gate" role="dialog" aria-modal="true" aria-labelledby="dg-gate-title">
+    <div class="dg-gate-card">
+      <div class="dg-gate-kicker">A private celebration</div>
+      <h1 id="dg-gate-title">Dhanishtha &amp; Gaurav</h1>
+      <p>Welcome to our wedding website. Please enter the password shared with your invitation.</p>
+      <form id="dg-gate-form">
+        <input id="dg-password" type="password" inputmode="numeric" autocomplete="off" placeholder="Wedding password" aria-label="Wedding password" required>
+        <button type="submit">Enter our celebration →</button>
+      </form>
+      <p id="dg-gate-error" role="alert"></p>
     </div>
-  </nav>
-
-  <main id="app"></main>
-
-  <footer>
-    <strong id="footer-names"></strong>
-    <div>Made with love</div>
-
-    <div class="pmw-credit">
-      <span>Wedding website by</span>
-      <a href="https://planmywedding.com/"
-         target="_blank"
-         rel="noopener noreferrer">
-        Plan My Wedding Africa ↗
-      </a>
-    </div>
-  </footer>
-
-  <!-- Shared website functionality -->
-  <script src="script.js"></script>
-
+  </div>
+  <div id="dg-site" hidden>
+    <div class="topline"></div>
+    <nav class="nav" aria-label="Wedding navigation"><div class="nav-inner"><a class="brand" href="#home" id="brand">Our Wedding</a><div class="links" id="links"></div></div></nav>
+    <main id="app"></main>
+    <footer><strong id="footer-names"></strong><div>Made with love</div><div class="pmw-credit"><span>Wedding website by</span> <a href="https://planmywedding.com/" target="_blank" rel="noopener noreferrer">Plan My Wedding Africa ↗</a></div></footer>
+  </div>
+  <script>
+    (() => {
+      // Invitation-level access gate only; not secure protection of public GitHub files.
+      const gate = document.getElementById('dg-gate');
+      const site = document.getElementById('dg-site');
+      const unlock = () => {gate.hidden=true;site.hidden=false;};
+      if (sessionStorage.getItem('dg-wedding-unlocked') === 'yes') unlock();
+      document.getElementById('dg-gate-form').addEventListener('submit', e => {
+        e.preventDefault();
+        if (document.getElementById('dg-password').value.trim() === '121527') {
+          sessionStorage.setItem('dg-wedding-unlocked','yes');
+          document.getElementById('dg-gate-error').textContent='';
+          unlock();
+        } else document.getElementById('dg-gate-error').textContent='Incorrect password. Please try again.';
+      });
+    })();
+  </script>
+  <script src="script.js?v=20261019-1"></script>
+  <script src="couples/dhanishtha-gaurav/enhancements.js?v=20261019-1"></script>
 </body>
 </html>
