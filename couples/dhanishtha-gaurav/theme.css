@@ -56,3 +56,24 @@
 #dg-gate-error{min-height:18px;color:#a3392f;margin-top:12px}
 @media(max-width:900px){.event-cards{grid-template-columns:1fr}.story-intro{grid-template-columns:1fr}.story-intro>img{position:static;max-height:560px;object-fit:contain;background:#eee2d3}.travel-cards{grid-template-columns:1fr}}
 @media(max-width:600px){.invitation-hero{min-height:650px!important;background-position:47% center!important}.invitation-hero .hero-copy{width:96vw;padding:45px 18px;min-height:500px;background:radial-gradient(ellipse at center,#f8f0e5fc 0%,#f8f0e5f2 65%,#f8f0e5c9 84%,#f8f0e585 100%)}.invitation-hero h1{font-size:clamp(45px,12vw,66px)}.love-notes{grid-template-columns:1fr}.dg-profile-pair img,.dg-placeholder-art{height:230px}#gallery .gallery{columns:2 140px;column-gap:8px}#gallery .gallery img{border-width:3px;margin-bottom:8px}.dg-gate-card{padding:38px 20px}}
+
+/* Dhanishtha & Gaurav photo update — landscape + portrait gallery */
+.dg-profile-pair figure img{display:block;width:100%;height:100%;max-height:380px;object-fit:cover;object-position:center}
+.dg-profile-pair figure{min-width:0;overflow:hidden}
+#gallery .gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-flow:dense;gap:14px;align-items:stretch}
+#gallery .gallery img{width:100%;height:100%;min-height:240px;max-height:410px;aspect-ratio:auto;object-fit:cover}
+#gallery .gallery img:nth-child(1),#gallery .gallery img:nth-child(4){grid-column:span 2;max-height:420px}
+#gallery .gallery img:nth-child(2){object-position:center 35%}
+@media(max-width:700px){#gallery .gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}#gallery .gallery img{min-height:180px;max-height:310px}#gallery .gallery img:nth-child(1),#gallery .gallery img:nth-child(4){grid-column:span 2;max-height:290px}}
+
+/* Individual Hinge profiles: each photograph appears with the description of that person. */
+#story .story-intro.dg-story-full-width{display:block;max-width:900px;margin:0 auto}
+#story .dg-individual-profiles{max-width:960px;margin:44px auto 0;grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch}
+#story .dg-individual-profiles>div{display:flex;flex-direction:column;align-items:stretch}
+#story .dg-personal-photo{margin:0 0 24px;text-align:center}
+#story .dg-personal-photo img{width:100%;height:340px;object-fit:cover;object-position:center;border:5px solid #fff8ef;box-shadow:0 6px 20px #342b2418}
+#story .dg-personal-photo figcaption{font:italic 17px 'Cormorant Garamond',serif;color:var(--olive);margin-top:10px}
+/* Show the complete horizontal and vertical gallery images without cropping. */
+#gallery .gallery{display:block;columns:3 220px;column-gap:14px}
+#gallery .gallery img,#gallery .gallery img:nth-child(1),#gallery .gallery img:nth-child(4){display:block;width:100%;height:auto;min-height:0;max-height:none;aspect-ratio:auto!important;object-fit:contain!important;break-inside:avoid;margin:0 0 14px;grid-column:auto}
+@media(max-width:700px){#story .dg-individual-profiles{grid-template-columns:1fr}#story .dg-personal-photo img{height:auto;max-height:430px;object-fit:contain}#gallery .gallery{columns:2 140px;column-gap:8px}#gallery .gallery img{margin-bottom:8px}}

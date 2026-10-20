@@ -1,28 +1,42 @@
 /* Couple-only layout enhancements: profile pictures, mixed gallery, countdown, hashtag. */
 (() => {
   const base = 'couples/dhanishtha-gaurav/images/';
-  const story = document.querySelector('#story .story-intro');
+  // Individual profile photos belong with each partner's description, not the gallery.
+  const story = document.querySelector('#story');
   if (story) {
-    const oldPhoto = story.querySelector(':scope > img');
-    if (oldPhoto) {
-      const pair = document.createElement('div');
-      pair.className = 'dg-profile-pair';
-      const first = document.createElement('figure');
-      const img = document.createElement('img');
-      img.src = base + 'couple-coconut.webp';
-      img.alt = 'Gaurav’s original dating-profile photo with a coconut';
-      img.loading = 'lazy';
-      first.append(img);
-      const caption = document.createElement('figcaption');
-      caption.textContent = 'Gaurav’s profile photo · Costa Rica';
-      first.append(caption);
-      const second = document.createElement('figure');
-      second.className = 'dg-photo-placeholder';
-      second.innerHTML = '<div class="dg-placeholder-art" aria-label="Photo coming soon">✦<span>Photo coming soon</span></div><figcaption>Dhanishtha’s profile photo · Greece</figcaption>';
-      pair.append(first, second);
-      oldPhoto.replaceWith(pair);
+    const intro = story.querySelector('.story-intro');
+    const oldPhoto = intro?.querySelector(':scope > img');
+    if (oldPhoto) oldPhoto.remove();
+    if (intro) intro.classList.add('dg-story-full-width');
+    const notes = story.querySelector('.love-notes');
+    if (notes) {
+      notes.classList.add('dg-individual-profiles');
+      const cards = [...notes.children];
+      const photos = [
+        {file:'dhanishtha-greece-profile.webp',alt:'Dhanishtha in a blue dress overlooking Greece',caption:'Dhanishtha’s original Hinge profile photo · Greece'},
+        {file:'couple-coconut.webp',alt:'Gaurav with a coconut on vacation in Costa Rica',caption:'Gaurav’s original Hinge profile photo · Costa Rica'}
+      ];
+      // Descriptions: first card is Dhanishtha on Gaurav, second is Gaurav on Dhanishtha.
+      // Match the picture to the person being described, not the speaker.
+      const assignments = [photos[1], photos[0]];
+      cards.forEach((card,i) => {
+        if (!assignments[i]) return;
+        const pic = assignments[i];
+        const fig = document.createElement('figure');
+        fig.className = 'dg-personal-photo';
+        const img = document.createElement('img');
+        img.src = base + pic.file;
+        img.alt = pic.alt;
+        img.loading = 'lazy';
+        const caption = document.createElement('figcaption');
+        caption.textContent = pic.caption;
+        fig.append(img,caption);
+        card.prepend(fig);
+      });
     }
   }
+  const registryNav = document.querySelector('#links a[href="#registry"]');
+  if (registryNav) registryNav.textContent = 'No Gifts';
   const hero = document.querySelector('#home .hero-copy');
   if (hero) {
     const countdown = document.createElement('div');
