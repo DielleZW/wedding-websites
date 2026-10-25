@@ -1,2 +1,1 @@
-Siphiwe & Melusi – Secret Garden V9 Mobile
-Upload all files into save-the-dates/siphiwe-melusi/ on GitHub. Replace existing files. This update fixes mobile sizing, button tap areas and safe-area spacing. Original garden images remain proportionally scaled (cover) and may crop on some aspect ratios.
+Upload index.html, style.css, script.js and garden-background.webp to save-the-dates/siphiwe-melusi/ in GitHub. KEEP the original closed-garden.webp file in that folder: it is required for the opening animation. No files in the repository root should be changed. The new image contains NO writing or buttons; all wording and controls are HTML.
