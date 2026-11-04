@@ -5,14 +5,7 @@ body{background:#fbf5f1;color:var(--ink)}
 .nav{background:rgba(255,249,246,.97)!important;backdrop-filter:blur(12px)}
 .nav .brand{color:#45523e!important;font-family:'Cormorant Garamond',serif!important}
 .nav a.active,.nav a:hover{color:#a96981!important}
-.invitation-hero{min-height:810px!important;background-position:center 49%!important;position:relative;isolation:isolate}
-.invitation-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,239,223,.14),rgba(255,244,230,.12))!important;z-index:-1}
-.invitation-hero .hero-copy{background:radial-gradient(ellipse at center,rgba(255,248,239,.97) 0%,rgba(255,248,239,.92) 57%,rgba(255,248,239,.67) 77%,rgba(255,248,239,0) 100%)!important;max-width:660px;min-height:610px;margin:auto;position:relative}
 .hero-kicker,.eyebrow{color:#a66c84!important;letter-spacing:.2em}
-.invitation-hero h1{color:#354332!important;font-family:'Cormorant Garamond',serif;font-size:clamp(57px,8vw,104px)!important;line-height:.96!important}
-.hero-and{color:#b47b91!important}
-.invitation-hero .script{color:#a96c83!important}
-.hero-date,.hero-place{color:#44513e!important}
 .button{background:#657b60!important;color:white!important;border:0!important}
 .button:hover{background:#a96981!important}
 .section-head h2{color:#45563f!important;font-family:'Cormorant Garamond',serif}
@@ -46,25 +39,42 @@ body{background:#fbf5f1;color:var(--ink)}
 footer{background:#4e604a!important;color:#fdf4e8!important}
 footer a{color:#f3d1b4!important}
 @media(max-width:900px){.event-cards,.travel-cards,.story-intro{grid-template-columns:1fr}.story-intro>img{height:400px;max-width:500px;margin:auto}.love-notes{grid-template-columns:1fr}}
-@media(max-width:600px){.invitation-hero{min-height:710px!important;background-position:center!important}.invitation-hero .hero-copy{width:94vw;min-height:550px;padding:35px 16px;background:radial-gradient(ellipse at center,rgba(255,248,239,.98) 0%,rgba(255,248,239,.92) 65%,rgba(255,248,239,.65) 85%,transparent 100%)!important}.invitation-hero h1{font-size:clamp(48px,12vw,68px)!important}.gallery{gap:8px!important}.gallery img{border-width:3px}.story-intro>img{height:340px}}
+@media(max-width:600px){.gallery{gap:8px!important}.gallery img{border-width:3px}.story-intro>img{height:340px}}
 
-/* Victoria Falls illustrated hero: image includes the couple's names and date.
-   Remove the former text panel so it no longer obscures the artwork. */
-.invitation-hero {
-  background-image: url("images/victoria-falls-hero.png") !important;
-  background-size: cover !important;
-  background-position: center center !important;
-  min-height: min(56.25vw, 900px) !important;
+
+/* Preserve the full invitation artwork; only the RSVP link overlays it. */
+.hero.invitation-hero {
+  display: block;
+  position: relative;
+  min-height: 0;
+  background: none;
+  border: 0;
+  overflow: hidden;
 }
-.invitation-hero::before { display: none !important; }
-.invitation-hero .hero-copy { display: none !important; }
-@media (max-width: 700px) {
-  .invitation-hero {
-    min-height: 0 !important;
-    height: auto !important;
-    aspect-ratio: 2 / 1;
-    background-size: contain !important;
-    background-repeat: no-repeat !important;
-    background-color: #263321 !important;
+.hero.invitation-hero::before { display: none; }
+.invitation-hero .hero-artwork {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.invitation-hero .hero-rsvp {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(12px, 4vw, 56px);
+  transform: translateX(-50%);
+  min-width: 120px;
+  min-height: 44px;
+  max-width: calc(100% - 32px);
+  padding: 12px 24px;
+  box-shadow: 0 3px 12px #26332166;
+}
+@media (max-width: 600px) {
+  .invitation-hero .hero-rsvp {
+    left: auto;
+    right: 8px;
+    bottom: 8px;
+    transform: none;
+    min-width: 88px;
+    padding: 10px 18px;
   }
 }

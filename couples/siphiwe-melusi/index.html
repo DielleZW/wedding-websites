@@ -19,8 +19,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="couples/siphiwe-melusi/theme.css">
-  <script src="couples/siphiwe-melusi/config.js?v=1"></script>
+  <link rel="stylesheet" href="couples/siphiwe-melusi/theme.css?v=20261104-rsvp">
+  <script src="couples/siphiwe-melusi/config.js?v=20261104"></script>
   <script>window.PMW_CLIENT_SLUG = "siphiwe-melusi";</script>
 </head>
 <body>
@@ -38,5 +38,35 @@
     <div class="pmw-credit"><span>Wedding website by</span> <a href="https://planmywedding.com/" target="_blank" rel="noopener noreferrer">Plan My Wedding Africa ↗</a></div>
   </footer>
   <script src="script.js?v=1"></script>
+  <script>
+    // This couple's invitation artwork already contains the hero wording.
+    (() => {
+      const wedding = window.PMW_WEDDING;
+      const hero = document.getElementById("home");
+      if (!hero || !wedding) return;
+
+      const artwork = document.createElement("img");
+      artwork.className = "hero-artwork";
+      artwork.src = wedding.heroImage;
+      artwork.alt = wedding.names + " — " + wedding.date + " · " + wedding.destination;
+      artwork.fetchPriority = "high";
+      hero.replaceChildren(artwork);
+      hero.style.removeProperty("background-image");
+      hero.setAttribute("aria-label", wedding.names + " wedding invitation");
+
+      if (wedding.rsvp?.enabled && wedding.rsvp.googleFormUrl) {
+        const url = new URL(wedding.rsvp.googleFormUrl, location.href);
+        if (url.protocol !== "https:") return;
+        const button = document.createElement("a");
+        button.className = "button hero-rsvp";
+        button.href = url.href;
+        button.target = "_blank";
+        button.rel = "noopener noreferrer";
+        button.textContent = "RSVP";
+        button.setAttribute("aria-label", "RSVP via Google Forms (opens in a new tab)");
+        hero.append(button);
+      }
+    })();
+  </script>
 </body>
 </html>
