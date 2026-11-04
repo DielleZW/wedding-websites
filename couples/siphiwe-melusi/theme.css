@@ -47,3 +47,24 @@ footer{background:#4e604a!important;color:#fdf4e8!important}
 footer a{color:#f3d1b4!important}
 @media(max-width:900px){.event-cards,.travel-cards,.story-intro{grid-template-columns:1fr}.story-intro>img{height:400px;max-width:500px;margin:auto}.love-notes{grid-template-columns:1fr}}
 @media(max-width:600px){.invitation-hero{min-height:710px!important;background-position:center!important}.invitation-hero .hero-copy{width:94vw;min-height:550px;padding:35px 16px;background:radial-gradient(ellipse at center,rgba(255,248,239,.98) 0%,rgba(255,248,239,.92) 65%,rgba(255,248,239,.65) 85%,transparent 100%)!important}.invitation-hero h1{font-size:clamp(48px,12vw,68px)!important}.gallery{gap:8px!important}.gallery img{border-width:3px}.story-intro>img{height:340px}}
+
+/* Victoria Falls illustrated hero: image includes the couple's names and date.
+   Remove the former text panel so it no longer obscures the artwork. */
+.invitation-hero {
+  background-image: url("images/victoria-falls-hero.png") !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  min-height: min(56.25vw, 900px) !important;
+}
+.invitation-hero::before { display: none !important; }
+.invitation-hero .hero-copy { display: none !important; }
+@media (max-width: 700px) {
+  .invitation-hero {
+    min-height: 0 !important;
+    height: auto !important;
+    aspect-ratio: 2 / 1;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-color: #263321 !important;
+  }
+}
