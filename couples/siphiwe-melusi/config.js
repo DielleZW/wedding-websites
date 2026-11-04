@@ -4,7 +4,7 @@ window.PMW_WEDDING = {
   date: "18 April 2027",
   destination: "Victoria Falls · Zimbabwe",
   subtitle: "A little magic awaits",
-  heroImage: "couples/siphiwe-melusi/images/enchanted-hero-background.jpg",
+  heroImage: "couples/siphiwe-melusi/images/victoria-falls-hero.png",
   heroKicker: "A new chapter begins",
   heroScript: "Our enchanted forever",
   story: {
