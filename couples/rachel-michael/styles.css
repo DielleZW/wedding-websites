@@ -1,65 +1,87 @@
 :root {
   color-scheme: light;
-  --paper: #f6f3ed;
-  --ink: #24231f;
-  --muted: #605b52;
-  --line: #a89e90;
-  --serif: 'Cormorant Garamond', Georgia, serif;
-  --script: 'Great Vibes', 'Snell Roundhand', 'Brush Script MT', cursive;
+  --ink: #23211f;
+  --muted: #5e5954;
   --sans: 'DM Sans', Arial, sans-serif;
+  --script: 'Great Vibes', 'Snell Roundhand', 'Brush Script MT', cursive;
 }
 
 * { box-sizing: border-box; }
-body { margin: 0; background: var(--paper); color: var(--ink); }
-main { max-width: 78rem; margin-inline: auto; padding: clamp(1rem, 4vw, 3rem); }
+body { margin: 0; background: #fff; color: var(--ink); font-family: var(--sans); }
+p { margin: 0; }
 
 .announcement {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, .82fr);
-  align-items: stretch;
-  border: 1px solid var(--line);
-  padding: clamp(.5rem, 1.25vw, 1rem);
-}
-
-.details {
   display: grid;
   justify-items: center;
   align-content: center;
   text-align: center;
+  min-height: 100vh;
+  min-height: 100svh;
   padding: 3rem 1rem;
 }
 
-.details p { margin: 0; }
-.eyebrow {
-  font: 400 clamp(1.85rem, 3vw, 2.6rem)/1.25 var(--script);
-  color: var(--muted);
+.announcement-title {
+  display: grid;
+  justify-items: center;
+  font-size: clamp(2.65rem, 9vw, 3.9rem);
+  line-height: 1;
+  letter-spacing: .3em;
+  text-transform: uppercase;
 }
 
-.location {
-  font: 500 .67rem/1.65 var(--sans);
-  text-transform: uppercase;
-  letter-spacing: .32em;
+.announcement-title > span:not(.our) { padding-inline-start: .3em; }
+
+.our {
+  display: flex;
+  align-items: center;
+  gap: .22em;
+  font: 400 .75em/.82 var(--script);
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+.our::before, .our::after {
+  content: '';
+  width: .91em;
+  height: .21em;
+  border-bottom: 1px solid currentColor;
+  border-radius: 50%;
+  transform: rotate(-8deg);
 }
 
 h1 {
-  display: grid;
-  justify-items: center;
-  font: 400 clamp(3.8rem, 7.5vw, 7rem)/.98 var(--script);
-  margin: .23em 0 .3em;
-  padding-inline: .12em;
+  margin: clamp(2.2rem, 6vh, 3.45rem) 0 0;
+  font-size: clamp(.9rem, 3.7vw, 1.14rem);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: .25em;
+  text-transform: uppercase;
 }
 
-.ampersand { font-size: .55em; line-height: 1.05; }
-.rule { width: 2.4rem; height: 1px; background: var(--line); margin-bottom: 1.45rem; }
-.date { font: 400 clamp(1.18rem, 2.25vw, 1.65rem)/1.3 var(--serif); }
-.details .location { margin-top: .55rem; }
-.details .note { margin-top: 1.7rem; color: var(--muted); font: italic 400 1.13rem/1.35 var(--serif); }
-img { display: block; width: 100%; height: auto; }
-.lakeside { max-width: 34rem; margin: clamp(2.75rem, 7vw, 6rem) auto clamp(1rem, 4vw, 3rem); }
+.getting-married, .wedding-details {
+  color: var(--muted);
+  font-size: .82rem;
+  line-height: 1.6;
+  letter-spacing: .16em;
+}
 
-@media (max-width: 42rem) {
-  main { max-width: 30rem; }
-  .announcement { grid-template-columns: 1fr; }
-  .details { padding: 2.65rem .65rem 2.5rem; }
-  h1 { font-size: clamp(3.4rem, 13vw, 5.6rem); }
+.getting-married { margin-top: .75rem; }
+.wedding-details { margin-top: 1.3rem; }
+.date-numerals { margin-top: 1.4rem; font-size: 1.02rem; letter-spacing: .24em; }
+.note { margin-top: 1.55rem; font: 400 1.65rem/.95 var(--script); }
+
+.photos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: clamp(1rem, 4vw, 3rem);
+  max-width: 49rem;
+  margin-inline: auto;
+  padding: 1rem clamp(1rem, 4vw, 3rem) 3rem;
+}
+
+.photos img { display: block; width: 100%; height: auto; }
+
+@media (max-width: 36rem) {
+  .photos { grid-template-columns: 1fr; max-width: 28rem; }
 }
