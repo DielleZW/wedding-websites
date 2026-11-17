@@ -40,7 +40,7 @@ img { display: block; width: 100%; height: auto; }
 }
 
 h1 {
-  font: 400 clamp(2.6rem, 16cqw, 4.8rem)/.88 var(--script);
+  font: 400 clamp(1.8rem, 12.7cqw, 3.81rem)/.88 var(--script);
   white-space: nowrap;
 }
 
