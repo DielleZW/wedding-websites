@@ -1,87 +1,72 @@
 :root {
-  color-scheme: light;
-  --ink: #23211f;
-  --muted: #5e5954;
+  color-scheme: dark;
   --sans: 'DM Sans', Arial, sans-serif;
-  --script: 'Great Vibes', 'Snell Roundhand', 'Brush Script MT', cursive;
+  --script: 'Mrs Saint Delafield', 'Snell Roundhand', 'Brush Script MT', cursive;
+  --serif: 'Playfair Display', Georgia, serif;
 }
 
 * { box-sizing: border-box; }
-body { margin: 0; background: #fff; color: var(--ink); font-family: var(--sans); }
-p { margin: 0; }
+body { margin: 0; background: #171717; color: #fff; font-family: var(--sans); }
+main { width: min(100%, 30rem); margin-inline: auto; }
+p, h1, figure { margin: 0; }
+img { display: block; width: 100%; height: auto; }
 
 .announcement {
-  display: grid;
-  justify-items: center;
-  align-content: center;
+  position: relative;
+  container-type: inline-size;
   text-align: center;
-  min-height: 100vh;
-  min-height: 100svh;
-  padding: 3rem 1rem;
+  text-shadow: 0 1px 5px #000, 0 0 18px #0009;
 }
 
 .announcement-title {
-  display: grid;
-  justify-items: center;
-  font-size: clamp(2.65rem, 9vw, 3.9rem);
+  position: absolute;
+  top: 8%;
+  inset-inline: 0;
+  font-size: clamp(.75rem, 3.55cqw, 1.08rem);
+}
+
+.arc { position: relative; display: block; }
+.arc span {
+  position: absolute;
+  left: 50%;
   line-height: 1;
-  letter-spacing: .3em;
-  text-transform: uppercase;
+  transform: translate(calc(-50% + var(--x)), var(--y)) rotate(var(--angle));
 }
 
-.announcement-title > span:not(.our) { padding-inline-start: .3em; }
-
-.our {
-  display: flex;
-  align-items: center;
-  gap: .22em;
-  font: 400 .75em/.82 var(--script);
-  letter-spacing: normal;
-  text-transform: none;
-}
-
-.our::before, .our::after {
-  content: '';
-  width: .91em;
-  height: .21em;
-  border-bottom: 1px solid currentColor;
-  border-radius: 50%;
-  transform: rotate(-8deg);
+.details {
+  position: absolute;
+  top: 49%;
+  inset-inline: .6rem;
 }
 
 h1 {
-  margin: clamp(2.2rem, 6vh, 3.45rem) 0 0;
-  font-size: clamp(.9rem, 3.7vw, 1.14rem);
-  font-weight: 400;
-  line-height: 1.5;
-  letter-spacing: .25em;
-  text-transform: uppercase;
+  font: 400 clamp(2.6rem, 16cqw, 4.8rem)/.88 var(--script);
+  white-space: nowrap;
 }
 
-.getting-married, .wedding-details {
-  color: var(--muted);
-  font-size: .82rem;
-  line-height: 1.6;
+h1 span { font-size: .53em; vertical-align: .15em; }
+.date {
+  margin-top: .23em;
+  padding-inline-start: .16em;
+  font: 700 clamp(1.3rem, 7.3cqw, 2.2rem)/1.24 var(--serif);
   letter-spacing: .16em;
 }
-
-.getting-married { margin-top: .75rem; }
-.wedding-details { margin-top: 1.3rem; }
-.date-numerals { margin-top: 1.4rem; font-size: 1.02rem; letter-spacing: .24em; }
-.note { margin-top: 1.55rem; font: 400 1.65rem/.95 var(--script); }
-
-.photos {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-items: center;
-  gap: clamp(1rem, 4vw, 3rem);
-  max-width: 49rem;
-  margin-inline: auto;
-  padding: 1rem clamp(1rem, 4vw, 3rem) 3rem;
+.location {
+  margin-top: .95em;
+  font-size: clamp(.57rem, 2.55cqw, .8rem);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .23em;
 }
+.note { margin-top: .55em; font-size: clamp(.63rem, 2.8cqw, .85rem); }
 
-.photos img { display: block; width: 100%; height: auto; }
+.second-photo { margin-top: 1rem; }
 
-@media (max-width: 36rem) {
-  .photos { grid-template-columns: 1fr; max-width: 28rem; }
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
