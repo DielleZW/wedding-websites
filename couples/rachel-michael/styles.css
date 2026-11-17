@@ -29,10 +29,11 @@ img { display: block; width: 100%; height: auto; }
 .save { transform: translateX(-.06em); }
 .date-word {
   font-size: clamp(3.35rem, 22cqw, 6.15rem);
-  transform: translateX(.03em);
+  transform: translate(.03em, .05em);
 }
 .the {
   font: 600 clamp(.58rem, 2.6cqw, .75rem)/1.25 var(--serif);
+  transform: translateY(-.38em);
   letter-spacing: .78em;
   padding-inline-start: .78em;
   text-transform: uppercase;
