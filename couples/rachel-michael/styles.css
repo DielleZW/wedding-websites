@@ -1,72 +1,54 @@
 :root {
-  color-scheme: dark;
-  --sans: 'DM Sans', Arial, sans-serif;
+  color-scheme: light;
+  --ink: #171512;
+  --paper: #eeece8;
+  --serif: 'Cormorant Garamond', Georgia, serif;
   --script: 'Mrs Saint Delafield', 'Snell Roundhand', 'Brush Script MT', cursive;
-  --serif: 'Playfair Display', Georgia, serif;
 }
 
 * { box-sizing: border-box; }
-body { margin: 0; background: #171717; color: #fff; font-family: var(--sans); }
-main { width: min(100%, 30rem); margin-inline: auto; }
+body { margin: 0; background: var(--paper); color: var(--ink); }
+main { width: min(100%, 28rem); margin-inline: auto; }
 p, h1, figure { margin: 0; }
 img { display: block; width: 100%; height: auto; }
 
-.announcement {
-  position: relative;
-  container-type: inline-size;
+.announcement { position: relative; container-type: inline-size; }
+
+.announcement-copy {
+  position: absolute;
+  inset: 7% 1rem auto;
   text-align: center;
-  text-shadow: 0 1px 5px #000, 0 0 18px #0009;
+  text-shadow: 0 0 6px #fff9;
 }
 
-.announcement-title {
-  position: absolute;
-  top: 8%;
-  inset-inline: 0;
-  font-size: clamp(.75rem, 3.55cqw, 1.08rem);
+.announcement-title { display: grid; justify-items: center; }
+.script {
+  display: block;
+  font: 400 clamp(2.8rem, 17cqw, 4.75rem)/.65 var(--script);
 }
-
-.arc { position: relative; display: block; }
-.arc span {
-  position: absolute;
-  left: 50%;
-  line-height: 1;
-  transform: translate(calc(-50% + var(--x)), var(--y)) rotate(var(--angle));
+.save { transform: translateX(-.06em); }
+.date-word {
+  font-size: clamp(3.35rem, 22cqw, 6.15rem);
+  transform: translateX(.03em);
+}
+.the {
+  font: 600 clamp(.58rem, 2.6cqw, .75rem)/1.25 var(--serif);
+  letter-spacing: .78em;
+  padding-inline-start: .78em;
+  text-transform: uppercase;
 }
 
 .details {
-  position: absolute;
-  top: 49%;
-  inset-inline: .6rem;
-}
-
-h1 {
-  font: 400 clamp(1.8rem, 12.7cqw, 3.81rem)/.88 var(--script);
-  white-space: nowrap;
-}
-
-h1 span { font-size: .53em; vertical-align: .15em; }
-.date {
-  margin-top: .23em;
-  padding-inline-start: .16em;
-  font: 700 clamp(1.3rem, 7.3cqw, 2.2rem)/1.24 var(--serif);
-  letter-spacing: .16em;
-}
-.location {
-  margin-top: .95em;
-  font-size: clamp(.57rem, 2.55cqw, .8rem);
-  font-weight: 500;
+  margin-top: clamp(.5rem, 2.8cqw, .8rem);
+  font: 600 clamp(.65rem, 2.85cqw, .82rem)/1.22 var(--serif);
+  letter-spacing: .29em;
   text-transform: uppercase;
-  letter-spacing: .23em;
 }
-.note { margin-top: .55em; font-size: clamp(.63rem, 2.8cqw, .85rem); }
-
+.details h1 { font: inherit; }
+.note {
+  margin-top: .25em;
+  font-style: italic;
+  letter-spacing: .11em;
+  text-transform: none;
+}
 .second-photo { margin-top: 1rem; }
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
